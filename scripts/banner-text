@@ -10,7 +10,12 @@ TEXT="${1:-Welcome to FOSS Weekend}"
 # Then, write a loop or a clever command (like `printf` and `tr`) 
 # to create a border string composed of dashes ('-') that matches the exact length of the text.
 
+BORDER=${#TEXT}
 BORDER=""
+
+for (( i=0; i<$TEXT_LENGTH; i++ )); do
+    BORDER="$BORDER-"
+done
 
 echo "$BORDER"
 echo "$TEXT"
